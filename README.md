@@ -1,8 +1,8 @@
-# The official raywenderlich.com Objective-C style guide.
+# Официальный свод правил ShadeApps по языку программирования Objective-C.
 
-This style guide outlines the coding conventions for raywenderlich.com.
+Данные правила описывают принятые стандарты разработки на языке Objective-C.
 
-## Introduction
+## Введение
 
 The reason we made this style guide was so that we could keep the code in our books, tutorials, and starter kits nice and consistent - even though we have many different authors working on the books.
 

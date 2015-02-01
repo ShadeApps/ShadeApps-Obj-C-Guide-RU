@@ -22,7 +22,7 @@
 ## Содержание
 
 * [Язык](#language)
-* [Code Organization](#code-organization)
+* [Организация кода](#code-organization)
 * [Spacing](#spacing)
 * [Comments](#comments)
 * [Naming](#naming)
@@ -65,9 +65,9 @@ UIColor *myColour = [UIColor whiteColor];
 ```
 
 
-## Code Organization
+## Организация кода
 
-Use `#pragma mark -` to categorize methods in functional groupings and protocol/delegate implementations following this general structure.
+Используйте `#pragma mark -` чтобы логически разделять методы на подгруппы и разделы.
 
 ```objc
 #pragma mark - Lifecycle
@@ -162,9 +162,9 @@ else {
                  }];
 ```
 
-## Comments
+## Комментарии
 
-When they are needed, comments should be used to explain **why** a particular piece of code does something. Any comments that are used must be kept up-to-date or deleted.
+В случае, если комментарии действительно необходимы и оправданы, они должны описывать то, **почему** было принято то или иное решение, а не описывать то, что можно и так понять из той или иной строчки кода. Комментарии ради комментариев не нужны и избыточны. Все ненужные или устаревшие комментарии должны быть удалены из проекта, это же касается и закомментированных кусков кода.
 
 Block comments should generally be avoided, as code should be as self-documenting as possible, with only the need for intermittent, few-line explanations. *Exception: This does not apply to those comments used to generate documentation.*
 

@@ -1,31 +1,27 @@
-# Официальный свод правил ShadeApps по языку программирования Objective-C.
+# Официальные правила ShadeApps по языку программирования Objective-C.
 
 Данные правила описывают принятые стандарты разработки на языке Objective-C.
 
 ## Введение
 
-The reason we made this style guide was so that we could keep the code in our books, tutorials, and starter kits nice and consistent - even though we have many different authors working on the books.
+Необходимость создания данного документа стала очевидной в первые совместной дни работы команды, поэтому мы выработали правила, которые основываются на 
 
-This style guide is different from other Objective-C style guides you may see, because the focus is centered on readability for print and the web. Many of the decisions were made with an eye toward conserving space for print, easy legibility, and tutorial writing.
+## Источники
 
-## Credits
+Данные правила целиком и полностью основаны на [аналогичных правилах Рэя Вендерлиха](https://github.com/raywenderlich/objective-c-style-guide).
 
-The creation of this style guide was a collaborative effort from various raywenderlich.com team members under the direction of Nicholas Waynik.  The team includes: [Soheil Moayedi Azarpour](https://github.com/moayes), [Ricardo Rendon Cepeda](https://github.com/ricardo-rendoncepeda), [Tony Dahbura](https://github.com/tdahbura), [Colin Eberhardt](https://github.com/ColinEberhardt), [Matt Galloway](https://github.com/mattjgalloway), [Greg Heo](https://github.com/gregheo), [Matthijs Hollemans](https://github.com/hollance), [Christopher LaPollo](https://github.com/elephantronic), [Saul Mora](https://github.com/casademora), [Andy Pereira](https://github.com/macandyp), [Mic Pringle](https://github.com/micpringle), [Pietro Rea](https://github.com/pietrorea), [Cesare Rocchi](https://github.com/funkyboy), [Marin Todorov](https://github.com/icanzilb), [Nicholas Waynik](https://github.com/ndubbs), and [Ray Wenderlich](https://github.com/raywenderlich)
+## Факультативные сведения
 
-We would like to thank the creators of the [New York Times](https://github.com/NYTimes/objective-c-style-guide) and [Robots & Pencils'](https://github.com/RobotsAndPencils/objective-c-style-guide) Objective-C Style Guides.  These two style guides provided a solid starting point for this guide to be created and based upon.
-
-## Background
-
-Here are some of the documents from Apple that informed the style guide. If something isn't mentioned here, it's probably covered in great detail in one of these:
+Подробно прочитать о тех или иных аспектах языка и правил написания Objective-C кода можно в следующих официальных источниках компании Apple:
 
 * [The Objective-C Programming Language](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
 * [Cocoa Fundamentals Guide](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaFundamentals/Introduction/Introduction.html)
 * [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
 * [iOS App Programming Guide](http://developer.apple.com/library/ios/#documentation/iphone/conceptual/iphoneosprogrammingguide/Introduction/Introduction.html)
 
-## Table of Contents
+## Содержание
 
-* [Language](#language)
+* [Язык](#language)
 * [Code Organization](#code-organization)
 * [Spacing](#spacing)
 * [Comments](#comments)
@@ -54,16 +50,16 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Xcode Project](#xcode-project)
 
 
-## Language
+## Язык
 
-US English should be used.
+Абсолютно весь код Objective-C, включая комментарии, pragma marks, названия переменных, методов, названия файлов и ресурсов пишется на английском языке. При этом используется американский вариант английского языка, известный также как US English.
 
-**Preferred:**
+**Предпочтительно:**
 ```objc
 UIColor *myColor = [UIColor whiteColor];
 ```
 
-**Not Preferred:**
+**Нежелательно:**
 ```objc
 UIColor *myColour = [UIColor whiteColor];
 ```

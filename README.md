@@ -109,15 +109,15 @@ UIColor *myColour = [UIColor whiteColor];
 - (NSString *)description {}
 ```
 
-## Spacing
+## Отступы
 
 * Установите настройки отступов в Xcode следующим образом:
 
 ![](http://i.imgur.com/xb6EC2l.png) 
 
-* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
+* Скобки методов и условий (`if`/`else`/`switch`/`while` и др.) открываются на той же строке, что и само условие, но закрываются на другой строке.
 
-**Preferred:**
+**Предпочтительно:**
 ```objc
 if (user.isHappy) {
   //Do something
@@ -126,7 +126,7 @@ if (user.isHappy) {
 }
 ```
 
-**Not Preferred:**
+**Нежелательно:**
 ```objc
 if (user.isHappy)
 {
@@ -137,11 +137,11 @@ else {
 }
 ```
 
-* There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but often there should probably be new methods.
-* Prefer using auto-synthesis. But if necessary, `@synthesize` and `@dynamic` should each be declared on new lines in the implementation.
-* Colon-aligning method invocation should often be avoided.  There are cases where a method signature may have >= 3 colons and colon-aligning makes the code more readable. Please do **NOT** however colon align methods containing blocks because Xcode's indenting makes it illegible.
+* Между последовательными вызовами методов необходимо отступать не меньше 1 строки для удобства чтения. 
+* Используйте автосозданные @property. Избегайте вызовов `@synthesize`.
+* **Не** выравнивайте блоки по по двоеточиям как это предлагает Xcode - такой код невозможно читать:
 
-**Preferred:**
+**Предпочтительно:**
 
 ```objc
 // blocks are easily readable
@@ -152,7 +152,7 @@ else {
 }];
 ```
 
-**Not Preferred:**
+**Нежелательно:**
 
 ```objc
 // colon-aligning makes the block indentation hard to read
@@ -169,7 +169,7 @@ else {
 
 В случае, если комментарии действительно необходимы и оправданы, они должны описывать то, **почему** было принято то или иное решение, а не описывать то, что можно и так понять из той или иной строчки кода. Комментарии ради комментариев не нужны и избыточны. Все ненужные или устаревшие комментарии должны быть удалены из проекта, это же касается и закомментированных кусков кода.
 
-Block comments should generally be avoided, as code should be as self-documenting as possible, with only the need for intermittent, few-line explanations. *Exception: This does not apply to those comments used to generate documentation.*
+Целые блоки комментариев не имеют смысла. При необходимости документирования публичных .h файлов класса, используйте расширение [VVDocumenter](https://github.com/onevcat/VVDocumenter-Xcode) в рамках менеджера расширений [Alcatraz](http://alcatraz.io).
 
 ## Naming
 

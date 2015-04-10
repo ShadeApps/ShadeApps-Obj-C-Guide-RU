@@ -23,8 +23,8 @@
 
 * [Язык](#language)
 * [Организация кода](#code-organization)
-* [Spacing](#spacing)
-* [Comments](#comments)
+* [Отступы](#spacing)
+* [Комментарии](#comments)
 * [Naming](#naming)
   * [Underscores](#underscores)
 * [Methods](#methods)
@@ -111,7 +111,10 @@ UIColor *myColour = [UIColor whiteColor];
 
 ## Spacing
 
-* Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
+* Установите настройки отступов в Xcode следующим образом:
+
+![](http://i.imgur.com/xb6EC2l.png) 
+
 * Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
 
 **Preferred:**

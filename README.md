@@ -24,7 +24,7 @@
 * [Язык](## Язык)
 * [Организация кода](#code-organization)
 * [Отступы](#spacing)
-* [Комментарии](#comments)
+* [Комментарии](#Комментарии)
 * [Naming](#naming)
   * [Underscores](#underscores)
 * [Methods](#methods)

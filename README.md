@@ -26,10 +26,10 @@
 * [Организация кода](#Организация-кода)
 * [Отступы](#Отступы)
 * [Комментарии](#Комментарии)
-* [Naming](#naming)
-  * [Underscores](#underscores)
-* [Methods](#methods)
-* [Variables](#variables)
+* [Названия](#Названия)
+  * [Нижнее подчёркивание](#Нижнее-подчёркивание)
+* [Методы](#Методы)
+* [Переменные](#Переменные)
 * [Property Attributes](#property-attributes)
 * [Dot-Notation Syntax](#dot-notation-syntax)
 * [Literals](#literals)
@@ -139,7 +139,7 @@ else {
 ```
 
 * Между последовательными вызовами методов необходимо отступать не меньше 1 строки для удобства чтения. 
-* Используйте автосозданные @property. Избегайте вызовов `@synthesize`.
+* Используйте автосинтезированные @property. Избегайте вызовов `@synthesize`.
 * **Не** выравнивайте блоки по по двоеточиям как это предлагает Xcode - такой код невозможно читать:
 
 **Предпочтительно:**
@@ -172,55 +172,87 @@ else {
 
 Целые блоки комментариев не имеют смысла. При необходимости документирования публичных .h файлов класса, используйте расширение [VVDocumenter](https://github.com/onevcat/VVDocumenter-Xcode) в рамках менеджера расширений [Alcatraz](http://alcatraz.io).
 
-## Naming
+## Названия
 
-Apple naming conventions should be adhered to wherever possible, especially those related to [memory management rules](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html) ([NARC](http://stackoverflow.com/a/2865194/340508)).
+Общепринятые "Apple naming conventions" должны соблюдаться везде где это возможно, особенно касаемо правил [управления паматью](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html) ([NARC](http://stackoverflow.com/a/2865194/340508)).
 
-Long, descriptive method and variable names are good.
+Длинные, описательные и читаемые имена методов и переменных - то, к чему **надо** стремиться/ По названию переменной или метода всегда должно быть понятно для чего она служит:
 
-**Preferred:**
-
-```objc
-UIButton *settingsButton;
-```
-
-**Not Preferred:**
+**Предпочтительно:**
 
 ```objc
-UIButton *setBut;
+UIButton *btnLowerSettings;
 ```
 
-A three letter prefix should always be used for class names and constants, however may be omitted for Core Data entity names. For any official raywenderlich.com books, starter kits, or tutorials, the prefix 'RWT' should be used.
-
-Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity.
-
-**Preferred:**
+**Нежелательно:**
 
 ```objc
-static NSTimeInterval const RWTTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
+UIButton *btnSt1;
 ```
 
-**Not Preferred:**
+трёхбуквенный префикс всегда используется в именах классов и названиях констант, а также в названиях имён сущностей Core Data. наш официальный трёхбуквенный префикс - **SHD**.
+
+Константы должны называться следующим образом:
+
+**Предпочтительно:**
 
 ```objc
-static NSTimeInterval const fadetime = 1.7;
+static CGFloat const SHDBottomTabBarViewHeightValue = 140;
 ```
 
-Properties should be camel-case with the leading word being lowercase. Use auto-synthesis for properties rather than manual @synthesize statements unless you have good reason.
-
-**Preferred:**
+**Нежелательно:**
 
 ```objc
-@property (strong, nonatomic) NSString *descriptiveVariableName;
+static CGFloat const heightValue = 140;
 ```
 
-**Not Preferred:**
+Все `@property` и переменные **обязательно** должны состоять из более 1 слова, первое из которых начинается с маленькой буквы, а все последующие - с заглавной. Не используйте директиву `@synthesize` при объявлении `@property`
+
+**Предпочтительно:**
+
+```objc
+@property (strong, nonatomic) NSString *avatarPathString;
+```
+
+**Нежелательно:**
 
 ```objc
 id varnm;
 ```
 
-### Underscores
+В компании ShadeApps существуют особые правила касаемо названий основных типов объектов. Они помогают структурировать типы объектов по названию - вы всегда знаете как у вас называется та или иная кнопка или image view:
+
+**Предпочтительно:**
+
+```objc
+UIButton *btnSettings;
+UIImageView *imgAveView;
+UIImage *avatarImage;
+UIView *mainDetailView;
+UITableView *mainTableView;
+```
+
+**Нежелательно:**
+
+```objc
+UIButton *setBut;
+UIImageView *image;
+UIImage *avatar;
+UIView *detail;
+UITableView *table;
+```
+
+Временные переменные? используемые только внутри цикла или отедльного метода стоит называть с префиксом `temp` или `tmp`:
+
+```objc
+- (CALayer *)mainLineLayer{
+    CALayer *tmpLayer = [CALayer new];
+    tmpLayer.backgroundColor = [UIColor redColor];
+    return tmpLayer;
+}
+```
+
+### Нижнее подчёркивание
 
 When using properties, instance variables should always be accessed and mutated using `self.`. This means that all properties will be visually distinct, as they will all be prefaced with `self.`. 
 
@@ -228,7 +260,7 @@ An exception to this: inside initializers, the backing instance variable (i.e. _
 
 Local variables should not contain underscores.
 
-## Methods
+## Методы
 
 In method signatures, there should be a space after the method type (-/+ symbol). There should be a space between the method segments (matching Apple's style).  Always include a keyword and be descriptive with the word before the argument which describes the argument.
 
@@ -252,7 +284,7 @@ The usage of the word "and" is reserved.  It should not be used for multiple par
 - (instancetype)initWith:(int)width and:(int)height;  // Never do this.
 ```
 
-## Variables
+## Переменные
 
 Variables should be named as descriptively as possible. Single letter variable names should be avoided except in `for()` loops.
 

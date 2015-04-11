@@ -27,7 +27,6 @@
 * [Отступы](#Отступы)
 * [Комментарии](#Комментарии)
 * [Названия](#Названия)
-  * [Нижнее подчёркивание](#Нижнее-подчёркивание)
 * [Методы](#Методы)
 * [Переменные](#Переменные)
 * [Property Attributes](#property-attributes)
@@ -242,7 +241,7 @@ UIView *detail;
 UITableView *table;
 ```
 
-Временные переменные? используемые только внутри цикла или отедльного метода стоит называть с префиксом `temp` или `tmp`:
+Временные переменные, используемые только внутри цикла или отдельного метода стоит называть с префиксом `temp` или `tmp`:
 
 ```objc
 - (CALayer *)mainLineLayer{
@@ -252,21 +251,13 @@ UITableView *table;
 }
 ```
 
-### Нижнее подчёркивание
-
-When using properties, instance variables should always be accessed and mutated using `self.`. This means that all properties will be visually distinct, as they will all be prefaced with `self.`. 
-
-An exception to this: inside initializers, the backing instance variable (i.e. _variableName) should be used directly to avoid any potential side effects of the getters/setters.
-
-Local variables should not contain underscores.
-
 ## Методы
 
-In method signatures, there should be a space after the method type (-/+ symbol). There should be a space between the method segments (matching Apple's style).  Always include a keyword and be descriptive with the word before the argument which describes the argument.
+В сигнатурах методов после сегментов всегда ставится пробел. Всегда используйте описательные и понятные названия переменных в телах метода и для описания аргументов.
 
-The usage of the word "and" is reserved.  It should not be used for multiple parameters as illustrated in the `initWithWidth:height:` example below.
+Использование слова "and" нежелательно. Его нельзя использовать в сигнатурах методов как показано на примере с методом `initWithWidth:height:` ниже:
 
-**Preferred:**
+**Предпочтительно:**
 ```objc
 - (void)setExampleText:(NSString *)text image:(UIImage *)image;
 - (void)sendAction:(SEL)aSelector to:(id)anObject forAllCells:(BOOL)flag;
@@ -274,7 +265,7 @@ The usage of the word "and" is reserved.  It should not be used for multiple par
 - (instancetype)initWithWidth:(CGFloat)width height:(CGFloat)height;
 ```
 
-**Not Preferred:**
+**Не желательно:**
 
 ```objc
 -(void)setT:(NSString *)text i:(UIImage *)image;

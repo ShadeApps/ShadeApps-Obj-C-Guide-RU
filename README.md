@@ -47,7 +47,7 @@
 * [Singletons](#singletons)
 * [Line Breaks](#line-breaks)
 * [Smiley Face](#smiley-face)
-* [Xcode Project](#xcode-project)
+* [Xcode проект](#Xcode-проект)
 
 
 ## Язык
@@ -738,7 +738,7 @@ Smiley faces are a very prominent style feature of the raywenderlich.com site!  
 ```objc
 :)
 ```  
-## Проекты в Xcode
+## Xcode проект
 
 Файлы внутри проекта в Xcode должны быть синхронизированны с файлами на диске и в самом проекте. Любые группы, созданные в Xcode должны совпадать с папками на диске. Для синхронизации файлов и папок, лучше всего использовать утилиту под названием [Synx](https://github.com/venmo/synx).
 

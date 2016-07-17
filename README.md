@@ -189,7 +189,7 @@ UIButton *btnLowerSettings;
 UIButton *btnSt1;
 ```
 
-трёхбуквенный префикс всегда используется в именах классов и названиях констант, а также в названиях имён сущностей Core Data. наш официальный трёхбуквенный префикс - **SHD**.
+трёхбуквенный префикс всегда используется в именах классов и названиях констант, а также в названиях имён сущностей Core Data. Наш официальный трёхбуквенный префикс - **SHD**.
 
 Константы должны называться следующим образом:
 
@@ -738,10 +738,8 @@ Smiley faces are a very prominent style feature of the raywenderlich.com site!  
 ```objc
 :)
 ```  
+## Проекты в Xcode
 
+Файлы внутри проекта в Xcode должны быть синхронизированны с файлами на диске и в самом проекте. Любые группы, созданные в Xcode должны совпадать с папками на диске. Для синхронизации файлов и папок, лучше всего использовать утилиту под названием [Synx](https://github.com/venmo/synx).
 
-## Xcode project
-
-The physical files should be kept in sync with the Xcode project files in order to avoid file sprawl. Any Xcode groups created should be reflected by folders in the filesystem. Code should be grouped not only by type, but also by feature for greater clarity.
-
-When possible, always turn on "Treat Warnings as Errors" in the target's Build Settings and enable as many [additional warnings](http://boredzo.org/blog/archives/2009-11-07/warnings) as possible. If you need to ignore a specific warning, use [Clang's pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas).
+Когда возможно, включайте опцию **"Treat Warnings as Errors"** в настройках проекта. Для выключения того или иного warning, можно использовать [функцию pragma в Clang](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas).
